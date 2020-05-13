@@ -11,7 +11,7 @@ export class CartService {
     {
       name: 'Comfort Bike',
       description: 'This is sport bike',
-      price: 500,
+      price: 500, // цена есть, а количество купленого товара?
       category: Category.Comfort,
       isAvailable: true
     },
