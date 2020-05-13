@@ -1,4 +1,4 @@
-import { Category } from '../../first-component/first-component.component';
+import { Category } from '../components/first-component/first-component.component';
 
 export interface Product {
   name: string;
@@ -6,4 +6,5 @@ export interface Product {
   price: number;
   category: Category;
   isAvailable: boolean;
+  amount: number;
 }
