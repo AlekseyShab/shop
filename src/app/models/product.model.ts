@@ -6,5 +6,4 @@ export interface Product {
   price: number;
   category: Category;
   isAvailable: boolean;
-  amount: number;
 }

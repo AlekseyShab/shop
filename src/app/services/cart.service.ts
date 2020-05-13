@@ -10,11 +10,17 @@ export class CartService {
   chosenProduct: Product[] = [
     {
       name: 'Comfort Bike',
+      description: 'This is bike for comfortable ride',
+      price: 300,
+      category: Category.Comfort,
+      isAvailable: true
+    },
+    {
+      name: 'Sport Bike',
       description: 'This is sport bike',
       price: 500,
-      category: Category.Comfort,
-      isAvailable: true,
-      amount: 1
+      category: Category.Sport,
+      isAvailable: true
     },
   ];
   constructor() { }
