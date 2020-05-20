@@ -1,0 +1,15 @@
+<div class="cart-container">
+    <p>Product in cart:</p>
+    <div *ngIf="productInCart else emptyCart" class="cart-container__list">
+        <app-cart-item *ngFor="let item of productInCart" [item]="item" [appHighlight]="COLOR" class="cart-container__item">
+        </app-cart-item>
+    </div>
+    <hr>
+    <div class="total-container">
+        <span>Products in cart:{{getProductInCart()}}</span>
+        <span>Total: {{getTotalSum()}} $</span>
+    </div>
+
+
+    <ng-template #emptyCart>This cart is empty now</ng-template>
+</div>

@@ -1,31 +1,37 @@
 import { Injectable } from '@angular/core';
 
+import { Subject } from 'rxjs';
+
 import { Product } from '../models/product.model';
-import { Category } from '../components/first-component/first-component.component';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  chosenProduct: Product[] = [
-    {
-      name: 'Comfort Bike',
-      description: 'This is bike for comfortable ride',
-      price: 300,
-      category: Category.Comfort,
-      isAvailable: true
-    },
-    {
-      name: 'Sport Bike',
-      description: 'This is sport bike',
-      price: 500,
-      category: Category.Sport,
-      isAvailable: true
-    },
-  ];
-  constructor() { }
+  public productsSubject = new Subject<Product[]>();
 
-  get listChosenProduct(): Product[] {
-    return this.chosenProduct;
+
+  private chosenProduct: Product[] = [];
+
+  constructor() {
+    this.productsSubject.next(this.chosenProduct);
+  }
+
+  private updateProducts() {
+    this.productsSubject.next(this.chosenProduct);
+  }
+
+  addItem(newProduct: Product) {
+    this.chosenProduct.push(newProduct);
+    this.updateProducts();
+  }
+
+  getTotalCost(): number {
+    return this.chosenProduct.map(product => product.price).reduce((total, price) => total + price, 0);
+  }
+
+  getTotalProductInCart(): number {
+    return this.chosenProduct.length;
   }
 }

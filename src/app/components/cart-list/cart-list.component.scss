@@ -1,0 +1,14 @@
+.total-container{
+  display: flex;
+  flex-direction: column;
+}
+.cart-container{
+  padding: 0 10px;
+  &__list{
+    display: flex;
+    flex-direction: column;
+  }
+  &__item{
+    cursor: pointer;
+  }
+}
