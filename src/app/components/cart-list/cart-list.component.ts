@@ -4,6 +4,8 @@ import { Product } from '../../models/product.model';
 import { CartService } from '../../services/cart.service';
 import { Subscription } from 'rxjs';
 
+const COLOR = '#7bdddc';
+
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
@@ -13,6 +15,8 @@ export class CartListComponent implements OnInit, OnDestroy {
   private products$: Subscription;
 
   productInCart: Product[];
+
+  COLOR = COLOR;
 
   constructor(private cartService: CartService) {
 

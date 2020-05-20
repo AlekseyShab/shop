@@ -1,7 +1,7 @@
 <div class="cart-container">
     <p>Product in cart:</p>
     <div *ngIf="productInCart else emptyCart" class="cart-container__list">
-        <app-cart-item *ngFor="let item of productInCart" [item]="item">
+        <app-cart-item *ngFor="let item of productInCart" [item]="item" [appHighlight]="COLOR" class="cart-container__item">
         </app-cart-item>
     </div>
     <hr>
